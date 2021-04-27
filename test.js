@@ -1,5 +1,5 @@
 
-const $ = new Env("cookie");
+const $ = new Env("京东资产变动通知");
 const JD_API_HOST = "https://api.m.jd.com/client.action";
 let cookiesArr = [], cookie = '', message;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
