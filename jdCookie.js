@@ -1,6 +1,10 @@
 /*
 此文件为Node.js专用。其他用户请忽略
  */
+const $ = new Env('test');
+const notify = $.isNode() ? require('./sendNotify') : '';
+//Node.js用户请在jdCookie.js处填写京东ck;
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //此处填写京东账号cookie。
 let CookieJDs = [
   '',//账号一ck,例:pt_key=XXX;pt_pin=XXX;
