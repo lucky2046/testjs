@@ -1,10 +1,6 @@
 /*
 此文件为Node.js专用。其他用户请忽略
  */
-const $ = new Env('test');
-const notify = $.isNode() ? require('./sendNotify') : '';
-//Node.js用户请在jdCookie.js处填写京东ck;
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //此处填写京东账号cookie。
 let CookieJDs = [
   '',//账号一ck,例:pt_key=XXX;pt_pin=XXX;
@@ -34,5 +30,5 @@ if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () =
 for (let i = 0; i < CookieJDs.length; i++) {
   if (!CookieJDs[i].match(/pt_pin=(.+?);/) || !CookieJDs[i].match(/pt_key=(.+?);/)) console.log(`\n提示:京东cookie 【${CookieJDs[i]}】填写不规范,可能会影响部分脚本正常使用。正确格式为: pt_key=xxx;pt_pin=xxx;（分号;不可少）\n`);
   const index = (i + 1 === 1) ? '' : (i + 1);
-  exports['CookieJD' + index] = CookieJDs[i].trim();
+  exports['CookieJD' + index] = CookieJDs[i].trim();https://github.com/luckywuhan/testjs/blob/main/jdCookie.js
 }
